@@ -35,12 +35,12 @@ private:
   UniversalDelayAudioProcessor& processor;
   juce::AudioProcessorValueTreeState& paramState;
 
-  ATK::juce::ImageLookAndFeel knob;
+    ATK::juce::ImageLookAndFeel knobSym;
+    ATK::juce::ImageLookAndFeel knobAsym;
   juce::Image bckgndImage;
 
-  ATK::juce::SliderComponent distLevel;
-  ATK::juce::SliderComponent lowLevel;
-  ATK::juce::SliderComponent highLevel;
-  ATK::juce::SliderComponent midLevel;
-  ATK::juce::SliderComponent midFreq;
+  ATK::juce::SliderComponent delayLevel;
+  ATK::juce::SliderComponent blendLevel;
+  ATK::juce::SliderComponent forwardLevel;
+  ATK::juce::SliderComponent feedbackLevel;
 };

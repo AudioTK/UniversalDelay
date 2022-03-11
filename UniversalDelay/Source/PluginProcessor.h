@@ -13,8 +13,7 @@
 #include "JuceHeader.h"
 
 #include <atk_core/atk_core.h>
-#include <atk_eq/atk_eq.h>
-#include <atk_tools/atk_tools.h>
+#include <atk_delay/atk_delay.h>
 
 #include <memory>
 
@@ -62,34 +61,16 @@ public:
   void setStateInformation(const void* data, int sizeInBytes) override;
 
 private:
-  static constexpr int OVERSAMPLING = 8;
-
   ATK::InPointerFilter<float> inFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> highPassFilter;
-  ATK::OversamplingFilter<double, ATK::Oversampling6points5order_8<double>> oversamplingFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> preDistortionToneShapingFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> bandPassFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> distLevelFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> distFilter;
-  std::unique_ptr<ATK::ModellerFilter<double>> postDistortionToneShapingFilter;
-  ATK::IIRFilter<ATK::ButterworthLowPassCoefficients<double>> lowpassFilter;
-  ATK::DecimationFilter<double> decimationFilter;
-  ATK::IIRFilter<ATK::ButterworthHighPassCoefficients<double>> DCFilter;
-  ATK::SecondOrderSVFFilter<ATK::SecondOrderSVFBellCoefficients<double>> lowToneControlFilter;
-  ATK::SecondOrderSVFFilter<ATK::SecondOrderSVFHighShelfCoefficients<double>> highToneControlFilter;
-  ATK::SecondOrderSVFFilter<ATK::SecondOrderSVFBellCoefficients<double>> sweepableMidToneControlFilter;
+  ATK::UniversalFixedDelayLineFilter<double> delayFilter;
   ATK::OutPointerFilter<float> outFilter;
 
   juce::AudioProcessorValueTreeState parameters;
   long sampleRate;
   int lastParameterSet;
 
-  float old_distLevel{1000};
-  float old_lowLevel{100};
-  float old_highLevel{100};
-  float old_midLevel{100};
-  float old_midFreq{1};
-  float old_lowQ{0};
-  float old_highQ{0};
-  float old_midQ{0};
+  float old_delay{0};
+  float old_blend{100};
+  float old_forward{0};
+  float old_feedback{0};
 };

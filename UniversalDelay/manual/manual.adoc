@@ -16,8 +16,8 @@ Here is how the parameters interact with the plugin:
 
 [square]
 * *delay* is the delay in seconds
-* *blend* is the amount of direct sound
-* *forward* is the amount of delayed sound
+* *blend* is the amount of delayed sound
+* *forward* is the amount of direct sound
 * *feedback* is the amount of sound to feedback in the delay line (strictly between -1 and 1)
 
 == Bugs
