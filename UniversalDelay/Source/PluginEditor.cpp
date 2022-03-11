@@ -18,10 +18,10 @@ UniversalDelayAudioProcessorEditor::UniversalDelayAudioProcessorEditor(Universal
   , paramState(paramState)
 , knobSym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02uni43_png, BinaryData::KNB02uni43_pngSize), 43, 43, 43)
 , knobAsym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02bi43_png, BinaryData::KNB02bi43_pngSize), 43, 43, 43)
-, delayLevel(paramState, "delay", "Delay", &knobAsym)
-  , blendLevel(paramState, "blend", "Blend", &knobAsym)
-  , forwardLevel(paramState, "forward", "Forward", &knobSym)
-  , feedbackLevel(paramState, "feedback", "Feedback", &knobSym)
+, delayLevel(paramState, "delay", "Delay", &knobSym)
+  , blendLevel(paramState, "blend", "Blend", &knobSym)
+  , forwardLevel(paramState, "forward", "Forward", &knobAsym)
+  , feedbackLevel(paramState, "feedback", "Feedback", &knobAsym)
 
 {
   addAndMakeVisible(delayLevel);
@@ -33,7 +33,7 @@ UniversalDelayAudioProcessorEditor::UniversalDelayAudioProcessorEditor(Universal
 
   // Make sure that before the constructor has finished, you've set the
   // editor's size to whatever you need it to be.
-  setSize(300, 200);
+  setSize(300, 100);
 }
 
 UniversalDelayAudioProcessorEditor::~UniversalDelayAudioProcessorEditor() = default;
@@ -45,8 +45,8 @@ void UniversalDelayAudioProcessorEditor::paint(juce::Graphics& g)
 
 void UniversalDelayAudioProcessorEditor::resized()
 {
-  delayLevel.setBounds(20, 80, 55, 55);
-  blendLevel.setBounds(120, 40, 55, 55);
-  forwardLevel.setBounds(120, 120, 55, 55);
-  feedbackLevel.setBounds(220, 40, 55, 55);
+  delayLevel.setBounds(25, 26, 43, 43);
+  blendLevel.setBounds(94, 26, 43, 43);
+  forwardLevel.setBounds(163, 26, 43, 43);
+  feedbackLevel.setBounds(232, 26, 43, 43);
 }
