@@ -12,7 +12,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-UniversalDelayAudioProcessor::UniversalDelayAudioProcessor()
+UniversalSyncDelayAudioProcessor::UniversalSyncDelayAudioProcessor()
     :
 #ifndef JucePlugin_PreferredChannelConfigurations
       AudioProcessor(BusesProperties()
@@ -26,7 +26,7 @@ UniversalDelayAudioProcessor::UniversalDelayAudioProcessor()
 #endif
       inFilter(nullptr, 1, 0, false), delayFilter(192000),
       outFilter(nullptr, 1, 0, false),
-      parameters(*this, nullptr, juce::Identifier("ATKUniversalDelay"),
+      parameters(*this, nullptr, juce::Identifier("ATKUniversalSyncDelay"),
                  {std::make_unique<juce::AudioParameterFloat>("delay", "Delay",
                                                               .1f, 1000.f, .1f),
                   std::make_unique<juce::AudioParameterFloat>(
@@ -39,14 +39,14 @@ UniversalDelayAudioProcessor::UniversalDelayAudioProcessor()
   outFilter.set_input_port(0, &delayFilter, 0);
 }
 
-UniversalDelayAudioProcessor::~UniversalDelayAudioProcessor() = default;
+UniversalSyncDelayAudioProcessor::~UniversalSyncDelayAudioProcessor() = default;
 
 //==============================================================================
-const juce::String UniversalDelayAudioProcessor::getName() const {
+const juce::String UniversalSyncDelayAudioProcessor::getName() const {
   return JucePlugin_Name;
 }
 
-bool UniversalDelayAudioProcessor::acceptsMidi() const {
+bool UniversalSyncDelayAudioProcessor::acceptsMidi() const {
 #if JucePlugin_WantsMidiInput
   return true;
 #else
@@ -54,7 +54,7 @@ bool UniversalDelayAudioProcessor::acceptsMidi() const {
 #endif
 }
 
-bool UniversalDelayAudioProcessor::producesMidi() const {
+bool UniversalSyncDelayAudioProcessor::producesMidi() const {
 #if JucePlugin_ProducesMidiOutput
   return true;
 #else
@@ -62,7 +62,7 @@ bool UniversalDelayAudioProcessor::producesMidi() const {
 #endif
 }
 
-bool UniversalDelayAudioProcessor::isMidiEffect() const {
+bool UniversalSyncDelayAudioProcessor::isMidiEffect() const {
 #if JucePlugin_IsMidiEffect
   return true;
 #else
@@ -70,42 +70,42 @@ bool UniversalDelayAudioProcessor::isMidiEffect() const {
 #endif
 }
 
-double UniversalDelayAudioProcessor::getTailLengthSeconds() const {
+double UniversalSyncDelayAudioProcessor::getTailLengthSeconds() const {
   return 0.0;
 }
 
-int UniversalDelayAudioProcessor::getNumPrograms() { return 4; }
+int UniversalSyncDelayAudioProcessor::getNumPrograms() { return 4; }
 
-int UniversalDelayAudioProcessor::getCurrentProgram() {
+int UniversalSyncDelayAudioProcessor::getCurrentProgram() {
   return lastParameterSet;
 }
 
-void UniversalDelayAudioProcessor::setCurrentProgram(int index) {
+void UniversalSyncDelayAudioProcessor::setCurrentProgram(int index) {
   if (index != lastParameterSet) {
     lastParameterSet = index;
     if (index == 0) {
       const char *preset0 =
-          "<UniversalDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
+          "<UniversalSyncDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
           "id=\"blend\" value=\"100\" /><PARAM id=\"forward\" value=\"50\" /> "
-          "<PARAM id=\"feedback\" value=\"0\" /></UniversalDelay>";
+          "<PARAM id=\"feedback\" value=\"0\" /></UniversalSyncDelay>";
       juce::XmlDocument doc(preset0);
 
       auto el = doc.getDocumentElement();
       parameters.state = juce::ValueTree::fromXml(*el);
     } else if (index == 1) {
       const char *preset1 =
-          "<UniversalDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
+          "<UniversalSyncDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
           "id=\"blend\" value=\"100\" /><PARAM id=\"forward\" value=\"50\" /> "
-          "<PARAM id=\"feedback\" value=\"10\" /></UniversalDelay>";
+          "<PARAM id=\"feedback\" value=\"10\" /></UniversalSyncDelay>";
       juce::XmlDocument doc(preset1);
 
       auto el = doc.getDocumentElement();
       parameters.state = juce::ValueTree::fromXml(*el);
     } else if (index == 2) {
       const char *preset2 =
-          "<UniversalDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
+          "<UniversalSyncDelay><PARAM id=\"delay\" value=\"1\" /><PARAM "
           "id=\"blend\" value=\"100\" /><PARAM id=\"forward\" value=\"0\" /> "
-          "<PARAM id=\"feedback\" value=\"0\" /></UniversalDelay>";
+          "<PARAM id=\"feedback\" value=\"0\" /></UniversalSyncDelay>";
       juce::XmlDocument doc(preset2);
 
       auto el = doc.getDocumentElement();
@@ -114,7 +114,7 @@ void UniversalDelayAudioProcessor::setCurrentProgram(int index) {
   }
 }
 
-const juce::String UniversalDelayAudioProcessor::getProgramName(int index) {
+const juce::String UniversalSyncDelayAudioProcessor::getProgramName(int index) {
   if (index == 0) {
     return "FIR comb filter";
   }
@@ -130,12 +130,12 @@ const juce::String UniversalDelayAudioProcessor::getProgramName(int index) {
   return {};
 }
 
-void UniversalDelayAudioProcessor::changeProgramName(
+void UniversalSyncDelayAudioProcessor::changeProgramName(
     int index, const juce::String &newName) {}
 
 //==============================================================================
-void UniversalDelayAudioProcessor::prepareToPlay(double dbSampleRate,
-                                                 int samplesPerBlock) {
+void UniversalSyncDelayAudioProcessor::prepareToPlay(double dbSampleRate,
+                                                     int samplesPerBlock) {
   sampleRate = std::lround(dbSampleRate);
 
   if (sampleRate != inFilter.get_output_sampling_rate()) {
@@ -149,13 +149,13 @@ void UniversalDelayAudioProcessor::prepareToPlay(double dbSampleRate,
   outFilter.dryrun(samplesPerBlock);
 }
 
-void UniversalDelayAudioProcessor::releaseResources() {
+void UniversalSyncDelayAudioProcessor::releaseResources() {
   // When playback stops, you can use this as an opportunity to free up any
   // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool UniversalDelayAudioProcessor::isBusesLayoutSupported(
+bool UniversalSyncDelayAudioProcessor::isBusesLayoutSupported(
     const juce::BusesLayout &layouts) const {
 #if JucePlugin_IsMidiEffect
   ignoreUnused(layouts);
@@ -176,7 +176,7 @@ bool UniversalDelayAudioProcessor::isBusesLayoutSupported(
 }
 #endif
 
-void UniversalDelayAudioProcessor::processBlock(
+void UniversalSyncDelayAudioProcessor::processBlock(
     juce::AudioSampleBuffer &buffer, juce::MidiBuffer &midiMessages) {
   if (*parameters.getRawParameterValue("delay") != old_delay) {
     old_delay = *parameters.getRawParameterValue("delay");
@@ -209,16 +209,16 @@ void UniversalDelayAudioProcessor::processBlock(
 }
 
 //==============================================================================
-bool UniversalDelayAudioProcessor::hasEditor() const {
+bool UniversalSyncDelayAudioProcessor::hasEditor() const {
   return true; // (change this to false if you choose to not supply an editor)
 }
 
-juce::AudioProcessorEditor *UniversalDelayAudioProcessor::createEditor() {
-  return new UniversalDelayAudioProcessorEditor(*this, parameters);
+juce::AudioProcessorEditor *UniversalSyncDelayAudioProcessor::createEditor() {
+  return new UniversalSyncDelayAudioProcessorEditor(*this, parameters);
 }
 
 //==============================================================================
-void UniversalDelayAudioProcessor::getStateInformation(
+void UniversalSyncDelayAudioProcessor::getStateInformation(
     juce::MemoryBlock &destData) {
   auto state = parameters.copyState();
   std::unique_ptr<juce::XmlElement> xml(state.createXml());
@@ -226,8 +226,8 @@ void UniversalDelayAudioProcessor::getStateInformation(
   copyXmlToBinary(*xml, destData);
 }
 
-void UniversalDelayAudioProcessor::setStateInformation(const void *data,
-                                                       int sizeInBytes) {
+void UniversalSyncDelayAudioProcessor::setStateInformation(const void *data,
+                                                           int sizeInBytes) {
   std::unique_ptr<juce::XmlElement> xmlState(
       getXmlFromBinary(data, sizeInBytes));
 
@@ -243,5 +243,5 @@ void UniversalDelayAudioProcessor::setStateInformation(const void *data,
 //==============================================================================
 // This creates new instances of the plugin..
 juce::AudioProcessor *JUCE_CALLTYPE createPluginFilter() {
-  return new UniversalDelayAudioProcessor();
+  return new UniversalSyncDelayAudioProcessor();
 }

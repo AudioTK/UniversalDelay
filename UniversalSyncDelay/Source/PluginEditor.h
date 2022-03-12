@@ -19,12 +19,13 @@
 //==============================================================================
 /**
  */
-class UniversalDelayAudioProcessorEditor : public juce::AudioProcessorEditor {
+class UniversalSyncDelayAudioProcessorEditor
+    : public juce::AudioProcessorEditor {
 public:
-  UniversalDelayAudioProcessorEditor(
-      UniversalDelayAudioProcessor &p,
+  UniversalSyncDelayAudioProcessorEditor(
+      UniversalSyncDelayAudioProcessor &p,
       juce::AudioProcessorValueTreeState &paramState);
-  ~UniversalDelayAudioProcessorEditor();
+  ~UniversalSyncDelayAudioProcessorEditor();
 
   //==============================================================================
   void paint(juce::Graphics &) override;
@@ -33,7 +34,7 @@ public:
 private:
   // This reference is provided as a quick way for your editor to
   // access the processor object that created it.
-  UniversalDelayAudioProcessor &processor;
+  UniversalSyncDelayAudioProcessor &processor;
   juce::AudioProcessorValueTreeState &paramState;
 
   ATK::juce::ImageLookAndFeel knobSym;

@@ -12,8 +12,8 @@
 #include "PluginProcessor.h"
 
 //==============================================================================
-UniversalDelayAudioProcessorEditor::UniversalDelayAudioProcessorEditor(
-    UniversalDelayAudioProcessor &p,
+UniversalSyncDelayAudioProcessorEditor::UniversalSyncDelayAudioProcessorEditor(
+    UniversalSyncDelayAudioProcessor &p,
     juce::AudioProcessorValueTreeState &paramState)
     : juce::AudioProcessorEditor(&p), processor(p), paramState(paramState),
       knobSym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02uni43_png,
@@ -41,14 +41,14 @@ UniversalDelayAudioProcessorEditor::UniversalDelayAudioProcessorEditor(
   setSize(300, 100);
 }
 
-UniversalDelayAudioProcessorEditor::~UniversalDelayAudioProcessorEditor() =
-    default;
+UniversalSyncDelayAudioProcessorEditor::
+    ~UniversalSyncDelayAudioProcessorEditor() = default;
 
-void UniversalDelayAudioProcessorEditor::paint(juce::Graphics &g) {
+void UniversalSyncDelayAudioProcessorEditor::paint(juce::Graphics &g) {
   g.drawImageAt(bckgndImage, 0, 0);
 }
 
-void UniversalDelayAudioProcessorEditor::resized() {
+void UniversalSyncDelayAudioProcessorEditor::resized() {
   delayLevel.setBounds(25, 26, 43, 43);
   blendLevel.setBounds(94, 26, 43, 43);
   forwardLevel.setBounds(163, 26, 43, 43);

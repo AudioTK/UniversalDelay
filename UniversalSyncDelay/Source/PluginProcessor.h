@@ -20,11 +20,11 @@
 //==============================================================================
 /**
  */
-class UniversalDelayAudioProcessor : public juce::AudioProcessor {
+class UniversalSyncDelayAudioProcessor : public juce::AudioProcessor {
 public:
   //==============================================================================
-  UniversalDelayAudioProcessor();
-  ~UniversalDelayAudioProcessor();
+  UniversalSyncDelayAudioProcessor();
+  ~UniversalSyncDelayAudioProcessor();
 
   //==============================================================================
   void prepareToPlay(double sampleRate, int samplesPerBlock) override;
@@ -68,7 +68,7 @@ private:
   long sampleRate;
   int lastParameterSet;
 
-  float old_delay{0};
+  int old_numerator{0};
   float old_blend{100};
   float old_forward{0};
   float old_feedback{0};
