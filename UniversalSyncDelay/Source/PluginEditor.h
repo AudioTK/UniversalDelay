@@ -41,7 +41,8 @@ class UniversalSyncDelayAudioProcessorEditor : public juce::AudioProcessorEditor
     ATK::juce::ImageLookAndFeel knobAsym;
     juce::Image bckgndImage;
 
-    ATK::juce::SliderComponent delayLevel;
+    ATK::juce::SliderComponent delayNumLevel;
+    ATK::juce::SliderComponent delayDenomLevel;
     ATK::juce::SliderComponent blendLevel;
     ATK::juce::SliderComponent forwardLevel;
     ATK::juce::SliderComponent feedbackLevel;

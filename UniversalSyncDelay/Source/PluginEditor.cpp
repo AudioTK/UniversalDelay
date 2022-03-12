@@ -22,13 +22,15 @@ UniversalSyncDelayAudioProcessorEditor::UniversalSyncDelayAudioProcessorEditor(
       knobAsym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02bi43_png,
                                                BinaryData::KNB02bi43_pngSize),
                43, 43, 43),
-      delayLevel(paramState, "delay", "Delay", &knobSym),
+      delayNumLevel(paramState, "delaynum", "Delay Numerator", &knobSym),
+      delayDenomLevel(paramState, "delaydenom", "Delay Denominator", &knobSym),
       blendLevel(paramState, "blend", "Blend", &knobSym),
       forwardLevel(paramState, "forward", "Forward", &knobAsym),
       feedbackLevel(paramState, "feedback", "Feedback", &knobAsym)
 
 {
-    addAndMakeVisible(delayLevel);
+    addAndMakeVisible(delayNumLevel);
+    addAndMakeVisible(delayDenomLevel);
     addAndMakeVisible(blendLevel);
     addAndMakeVisible(forwardLevel);
     addAndMakeVisible(feedbackLevel);
@@ -51,7 +53,8 @@ void UniversalSyncDelayAudioProcessorEditor::paint(juce::Graphics& g)
 
 void UniversalSyncDelayAudioProcessorEditor::resized()
 {
-    delayLevel.setBounds(25, 26, 43, 43);
+    delayNumLevel.setBounds(25, 26, 43, 43);
+    delayDenomLevel.setBounds(25, 26, 43, 43);
     blendLevel.setBounds(94, 26, 43, 43);
     forwardLevel.setBounds(163, 26, 43, 43);
     feedbackLevel.setBounds(232, 26, 43, 43);

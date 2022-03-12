@@ -223,15 +223,18 @@ void UniversalSyncDelayAudioProcessor::processBlock(
     if (auto* head = getPlayHead())
     {
         juce::AudioPlayHead::CurrentPositionInfo info;
-        if(head->getCurrentPosition(info) && info.bpm != 0 && info.bpm != old_tempo)
+        if (head->getCurrentPosition(info) && info.bpm != 0 &&
+            info.bpm != old_tempo)
         {
             old_tempo = info.bpm;
             updateDelay = true;
         }
     }
-    if(updateDelay)
+    if (updateDelay)
     {
-        delayFilter.set_delay(delayFilter.get_input_sampling_rate() * (60 / old_tempo) * 4 * old_numerator / old_denominator);
+        delayFilter.set_delay(delayFilter.get_input_sampling_rate() *
+                              (60 / old_tempo) * 4 * old_numerator /
+                              old_denominator);
     }
     if (*parameters.getRawParameterValue("blend") != old_blend)
     {
