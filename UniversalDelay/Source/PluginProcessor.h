@@ -20,56 +20,57 @@
 //==============================================================================
 /**
  */
-class UniversalDelayAudioProcessor : public juce::AudioProcessor {
-public:
-  //==============================================================================
-  UniversalDelayAudioProcessor();
-  ~UniversalDelayAudioProcessor();
+class UniversalDelayAudioProcessor : public juce::AudioProcessor
+{
+  public:
+    //==============================================================================
+    UniversalDelayAudioProcessor();
+    ~UniversalDelayAudioProcessor();
 
-  //==============================================================================
-  void prepareToPlay(double sampleRate, int samplesPerBlock) override;
-  void releaseResources() override;
+    //==============================================================================
+    void prepareToPlay(double sampleRate, int samplesPerBlock) override;
+    void releaseResources() override;
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-  bool isBusesLayoutSupported(const BusesLayout &layouts) const override;
+    bool isBusesLayoutSupported(const BusesLayout& layouts) const override;
 #endif
 
-  void processBlock(juce::AudioSampleBuffer &, juce::MidiBuffer &) override;
+    void processBlock(juce::AudioSampleBuffer&, juce::MidiBuffer&) override;
 
-  //==============================================================================
-  juce::AudioProcessorEditor *createEditor() override;
-  bool hasEditor() const override;
+    //==============================================================================
+    juce::AudioProcessorEditor* createEditor() override;
+    bool hasEditor() const override;
 
-  //==============================================================================
-  const juce::String getName() const override;
+    //==============================================================================
+    const juce::String getName() const override;
 
-  bool isMidiEffect() const override;
-  bool acceptsMidi() const override;
-  bool producesMidi() const override;
-  double getTailLengthSeconds() const override;
+    bool isMidiEffect() const override;
+    bool acceptsMidi() const override;
+    bool producesMidi() const override;
+    double getTailLengthSeconds() const override;
 
-  //==============================================================================
-  int getNumPrograms() override;
-  int getCurrentProgram() override;
-  void setCurrentProgram(int index) override;
-  const juce::String getProgramName(int index) override;
-  void changeProgramName(int index, const juce::String &newName) override;
+    //==============================================================================
+    int getNumPrograms() override;
+    int getCurrentProgram() override;
+    void setCurrentProgram(int index) override;
+    const juce::String getProgramName(int index) override;
+    void changeProgramName(int index, const juce::String& newName) override;
 
-  //==============================================================================
-  void getStateInformation(juce::MemoryBlock &destData) override;
-  void setStateInformation(const void *data, int sizeInBytes) override;
+    //==============================================================================
+    void getStateInformation(juce::MemoryBlock& destData) override;
+    void setStateInformation(const void* data, int sizeInBytes) override;
 
-private:
-  ATK::InPointerFilter<float> inFilter;
-  ATK::UniversalFixedDelayLineFilter<double> delayFilter;
-  ATK::OutPointerFilter<float> outFilter;
+  private:
+    ATK::InPointerFilter<float> inFilter;
+    ATK::UniversalFixedDelayLineFilter<double> delayFilter;
+    ATK::OutPointerFilter<float> outFilter;
 
-  juce::AudioProcessorValueTreeState parameters;
-  long sampleRate;
-  int lastParameterSet;
+    juce::AudioProcessorValueTreeState parameters;
+    long sampleRate;
+    int lastParameterSet;
 
-  float old_delay{0};
-  float old_blend{100};
-  float old_forward{0};
-  float old_feedback{0};
+    float old_delay{0};
+    float old_blend{100};
+    float old_forward{0};
+    float old_feedback{0};
 };

@@ -19,30 +19,30 @@
 //==============================================================================
 /**
  */
-class UniversalSyncDelayAudioProcessorEditor
-    : public juce::AudioProcessorEditor {
-public:
-  UniversalSyncDelayAudioProcessorEditor(
-      UniversalSyncDelayAudioProcessor &p,
-      juce::AudioProcessorValueTreeState &paramState);
-  ~UniversalSyncDelayAudioProcessorEditor();
+class UniversalSyncDelayAudioProcessorEditor : public juce::AudioProcessorEditor
+{
+  public:
+    UniversalSyncDelayAudioProcessorEditor(
+        UniversalSyncDelayAudioProcessor& p,
+        juce::AudioProcessorValueTreeState& paramState);
+    ~UniversalSyncDelayAudioProcessorEditor();
 
-  //==============================================================================
-  void paint(juce::Graphics &) override;
-  void resized() override;
+    //==============================================================================
+    void paint(juce::Graphics&) override;
+    void resized() override;
 
-private:
-  // This reference is provided as a quick way for your editor to
-  // access the processor object that created it.
-  UniversalSyncDelayAudioProcessor &processor;
-  juce::AudioProcessorValueTreeState &paramState;
+  private:
+    // This reference is provided as a quick way for your editor to
+    // access the processor object that created it.
+    UniversalSyncDelayAudioProcessor& processor;
+    juce::AudioProcessorValueTreeState& paramState;
 
-  ATK::juce::ImageLookAndFeel knobSym;
-  ATK::juce::ImageLookAndFeel knobAsym;
-  juce::Image bckgndImage;
+    ATK::juce::ImageLookAndFeel knobSym;
+    ATK::juce::ImageLookAndFeel knobAsym;
+    juce::Image bckgndImage;
 
-  ATK::juce::SliderComponent delayLevel;
-  ATK::juce::SliderComponent blendLevel;
-  ATK::juce::SliderComponent forwardLevel;
-  ATK::juce::SliderComponent feedbackLevel;
+    ATK::juce::SliderComponent delayLevel;
+    ATK::juce::SliderComponent blendLevel;
+    ATK::juce::SliderComponent forwardLevel;
+    ATK::juce::SliderComponent feedbackLevel;
 };
