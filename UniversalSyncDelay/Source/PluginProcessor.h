@@ -72,7 +72,7 @@ class UniversalSyncDelayAudioProcessor : public juce::AudioProcessor
     int old_numerator{0};
     int old_denominator{0};
     float old_tempo{120};
-    float old_blend{100};
+    float old_blend{0};
     float old_forward{0};
     float old_feedback{0};
 };
