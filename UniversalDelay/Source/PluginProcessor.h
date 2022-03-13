@@ -70,7 +70,7 @@ class UniversalDelayAudioProcessor : public juce::AudioProcessor
     int lastParameterSet;
 
     float old_delay{0};
-    float old_blend{100};
+    float old_blend{0};
     float old_forward{0};
     float old_feedback{0};
 };
