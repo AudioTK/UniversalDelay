@@ -1,6 +1,6 @@
 [Setup]
 AppName=UniversalDelay
-AppVersion=1.3
+AppVersion=2.0
 
 
 DefaultDirName={pf}\UniversalDelay
