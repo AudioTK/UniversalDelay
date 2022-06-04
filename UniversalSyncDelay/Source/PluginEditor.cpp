@@ -16,14 +16,15 @@ UniversalSyncDelayAudioProcessorEditor::UniversalSyncDelayAudioProcessorEditor(
     UniversalSyncDelayAudioProcessor& p,
     juce::AudioProcessorValueTreeState& paramState)
     : juce::AudioProcessorEditor(&p), processor(p), paramState(paramState),
-      syncDelay(paramState, "", "blend", "forward", "feedback")
+      syncDelay(paramState, "delaynum", "delaydenom", "blend", "forward",
+                "feedback")
 
 {
     addAndMakeVisible(syncDelay);
 
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize(450, 200);
+    setSize(550, 200);
 }
 
 UniversalSyncDelayAudioProcessorEditor::
@@ -33,8 +34,10 @@ void UniversalSyncDelayAudioProcessorEditor::paint(juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with
     // a solid colour)
-    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
-    g.setFont(juce::Font("Times New Roman", 30.0f, juce::Font::bold | juce::Font::italic));
+    g.fillAll(
+        getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
+    g.setFont(juce::Font("Times New Roman", 30.0f,
+                         juce::Font::bold | juce::Font::italic));
     g.setColour(juce::Colours::whitesmoke);
     g.drawText("Universal Sync Delay", 20, 10, 400, 30,
                juce::Justification::verticallyCentred);
