@@ -11,6 +11,11 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
+namespace
+{
+constexpr gsl::index FILTERSIZE = 192000;
+}
+
 //==============================================================================
 UniversalSyncDelayAudioProcessor::UniversalSyncDelayAudioProcessor()
     :
@@ -24,7 +29,7 @@ UniversalSyncDelayAudioProcessor::UniversalSyncDelayAudioProcessor()
 #endif
                          ),
 #endif
-      inFilter(nullptr, 1, 0, false), delayFilter(192000),
+      inFilter(nullptr, 1, 0, false), delayFilter(FILTERSIZE),
       outFilter(nullptr, 1, 0, false),
       parameters(*this, nullptr, juce::Identifier("ATKUniversalSyncDelay"),
                  {std::make_unique<juce::AudioParameterInt>(
@@ -232,9 +237,10 @@ void UniversalSyncDelayAudioProcessor::processBlock(
     }
     if (updateDelay)
     {
-        delayFilter.set_delay(delayFilter.get_input_sampling_rate() *
-                              (60 / old_tempo) * 4 * old_numerator /
-                              old_denominator);
+        auto delay = static_cast<gsl::index>(
+            delayFilter.get_input_sampling_rate() * (60 / old_tempo) * 4 *
+            old_numerator / old_denominator);
+        delayFilter.set_delay(std::min(delay, FILTERSIZE));
     }
     if (*parameters.getRawParameterValue("blend") != old_blend)
     {
