@@ -25,15 +25,12 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="Js7KLE" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
-    <FILE id="BeJrTw" name="Background.png" compile="0" resource="1" file="resources/Background.png"/>
-    <FILE id="gIBvzj" name="ImageLookAndFeel.cpp" compile="1" resource="0"
-          file="../ATKJUCEComponents/JUCE/ImageLookAndFeel.cpp"/>
-    <FILE id="ThLgEC" name="ImageLookAndFeel.h" compile="0" resource="0"
-          file="../ATKJUCEComponents/JUCE/ImageLookAndFeel.h"/>
-    <FILE id="UClX8A" name="KNB02bi43.png" compile="0" resource="1" file="resources/KNB02bi43.png"/>
-    <FILE id="yJsqw3" name="KNB02uni43.png" compile="0" resource="1" file="resources/KNB02uni43.png"/>
-    <FILE id="iCwshp" name="Slider.cpp" compile="1" resource="0" file="../ATKJUCEComponents/JUCE/Slider.cpp"/>
-    <FILE id="yDVbgj" name="Slider.h" compile="0" resource="0" file="../ATKJUCEComponents/JUCE/Slider.h"/>
+    <FILE id="E7RWXy" name="SyncUniversalFixedDelayFilter.cpp" compile="1"
+          resource="0" file="../ATKJUCEComponents/Delay/SyncUniversalFixedDelayFilter.cpp"/>
+    <FILE id="TxxYyE" name="SyncUniversalFixedDelayFilter.h" compile="0"
+          resource="0" file="../ATKJUCEComponents/Delay/SyncUniversalFixedDelayFilter.h"/>
+    <FILE id="HuU3US" name="LookAndFeel.cpp" compile="1" resource="0" file="../ATKJUCEComponents/JUCE/LookAndFeel.cpp"/>
+    <FILE id="TZ7FTj" name="LookAndFeel.h" compile="0" resource="0" file="../ATKJUCEComponents/JUCE/LookAndFeel.h"/>
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" vst3Folder="../../../SDKs/VST3_SDK"
@@ -43,14 +40,14 @@
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="UniversalSyncDelay"
                        enablePluginBinaryCopyStep="1" headerPath="../../../&#10;../../../../../AudioTK&#10;../../../../../AudioTK/3rdParty/gsl/include&#10;../../../../../AudioTK/3rdParty/eigen&#10;../../../../../boost_1_77_0&#10;"
                        osxArchitecture="64BitIntel" codeSigningIdentity="Developer ID Application: Matthieu Brucher (APLDS8QMQ5)"
-                       macOSBaseSDK="12.1" osxSDK="12.1 SDK"/>
+                       macOSBaseSDK="12.3" osxSDK="12.3 SDK"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="UniversalSyncDelay"
                        enablePluginBinaryCopyStep="1" stripLocalSymbols="1" fastMath="1"
                        headerPath="../../../&#10;../../../../../AudioTK&#10;../../../../../AudioTK/3rdParty/gsl/include&#10;../../../../../AudioTK/3rdParty/eigen&#10;../../../../../boost_1_77_0&#10;"
                        aaxBinaryLocation="$(HOME)/Library/Application Support/Avid/Audio/Plug-Ins/"
-                       osxSDK="12.1 SDK" codeSigningIdentity="Developer ID Application: Matthieu Brucher (APLDS8QMQ5)"
+                       osxSDK="12.3 SDK" codeSigningIdentity="Developer ID Application: Matthieu Brucher (APLDS8QMQ5)"
                        customXcodeFlags="OTHER_CODE_SIGN_FLAGS= --options=runtime --timestamp"
-                       macOSBaseSDK="12.1"/>
+                       macOSBaseSDK="12.3"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../JUCE/modules"/>

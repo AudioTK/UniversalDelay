@@ -16,31 +16,14 @@ UniversalSyncDelayAudioProcessorEditor::UniversalSyncDelayAudioProcessorEditor(
     UniversalSyncDelayAudioProcessor& p,
     juce::AudioProcessorValueTreeState& paramState)
     : juce::AudioProcessorEditor(&p), processor(p), paramState(paramState),
-      knobSym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02uni43_png,
-                                              BinaryData::KNB02uni43_pngSize),
-              43, 43, 43),
-      knobAsym(juce::ImageFileFormat::loadFrom(BinaryData::KNB02bi43_png,
-                                               BinaryData::KNB02bi43_pngSize),
-               43, 43, 43),
-      delayNumLevel(paramState, "delaynum", "Delay Numerator", &knobSym),
-      delayDenomLevel(paramState, "delaydenom", "Delay Denominator", &knobSym),
-      blendLevel(paramState, "blend", "Blend", &knobSym),
-      forwardLevel(paramState, "forward", "Forward", &knobAsym),
-      feedbackLevel(paramState, "feedback", "Feedback", &knobAsym)
+      syncDelay(paramState, "", "blend", "forward", "feedback")
 
 {
-    addAndMakeVisible(delayNumLevel);
-    addAndMakeVisible(delayDenomLevel);
-    addAndMakeVisible(blendLevel);
-    addAndMakeVisible(forwardLevel);
-    addAndMakeVisible(feedbackLevel);
-
-    bckgndImage = juce::ImageFileFormat::loadFrom(
-        BinaryData::Background_png, BinaryData::Background_pngSize);
+    addAndMakeVisible(syncDelay);
 
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize(300, 100);
+    setSize(450, 200);
 }
 
 UniversalSyncDelayAudioProcessorEditor::
@@ -48,14 +31,16 @@ UniversalSyncDelayAudioProcessorEditor::
 
 void UniversalSyncDelayAudioProcessorEditor::paint(juce::Graphics& g)
 {
-    g.drawImageAt(bckgndImage, 0, 0);
+    // (Our component is opaque, so we must completely fill the background with
+    // a solid colour)
+    g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
+    g.setFont(juce::Font("Times New Roman", 30.0f, juce::Font::bold | juce::Font::italic));
+    g.setColour(juce::Colours::whitesmoke);
+    g.drawText("Universal Sync Delay", 20, 10, 400, 30,
+               juce::Justification::verticallyCentred);
 }
 
 void UniversalSyncDelayAudioProcessorEditor::resized()
 {
-    delayNumLevel.setBounds(25, 26, 43, 43);
-    delayDenomLevel.setBounds(25, 26, 43, 43);
-    blendLevel.setBounds(94, 26, 43, 43);
-    forwardLevel.setBounds(163, 26, 43, 43);
-    feedbackLevel.setBounds(232, 26, 43, 43);
+    syncDelay.setBoundsRelative(0, 1. / 4, 1, 3. / 4);
 }

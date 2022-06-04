@@ -13,8 +13,7 @@
 #include "JuceHeader.h"
 #include "PluginProcessor.h"
 
-#include <ATKJUCEComponents/JUCE/ImageLookAndFeel.h>
-#include <ATKJUCEComponents/JUCE/Slider.h>
+#include <ATKJUCEComponents/Delay/SyncUniversalFixedDelayFilter.h>
 
 //==============================================================================
 /**
@@ -28,8 +27,8 @@ class UniversalSyncDelayAudioProcessorEditor : public juce::AudioProcessorEditor
     ~UniversalSyncDelayAudioProcessorEditor();
 
     //==============================================================================
-    void paint(juce::Graphics&) override;
     void resized() override;
+    void paint(juce::Graphics& g) override;
 
   private:
     // This reference is provided as a quick way for your editor to
@@ -37,13 +36,5 @@ class UniversalSyncDelayAudioProcessorEditor : public juce::AudioProcessorEditor
     UniversalSyncDelayAudioProcessor& processor;
     juce::AudioProcessorValueTreeState& paramState;
 
-    ATK::juce::ImageLookAndFeel knobSym;
-    ATK::juce::ImageLookAndFeel knobAsym;
-    juce::Image bckgndImage;
-
-    ATK::juce::SliderComponent delayNumLevel;
-    ATK::juce::SliderComponent delayDenomLevel;
-    ATK::juce::SliderComponent blendLevel;
-    ATK::juce::SliderComponent forwardLevel;
-    ATK::juce::SliderComponent feedbackLevel;
+    ATK::juce::SyncUniversalFixedDelayFilterComponent syncDelay;
 };
