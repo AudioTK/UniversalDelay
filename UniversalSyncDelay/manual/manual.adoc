@@ -6,7 +6,7 @@ Matthieu Brucher <matthieu.brucher@gmail.com>
 // Uncomment next line to set page size (default is Letter)
 //:pdf-page-size: A4
 
-*UniversalSyncDelay* is a free Open Source mono delay plugin with tempo synchronisation (maximum delay of 384000 samples).
+*UniversalSyncDelay* is a free Open Source mono delay plugin with tempo synchronisation (maximum delay of 384000 samples, which is 4s at 96kHz).
 
 image::UniversalSyncDelay.png[GUI]
 
@@ -16,7 +16,7 @@ Here is how the parameters interact with the plugin:
 
 [square]
 * *delaynum* is the delay expressed as a number of ticks
-* *delaydenom* is the delay fraction (4 is the quarter note default count)
+* *delaydenom* is the delay fraction (the plugin assumes that 1/4 is one tempo clic)
 * *blend* is the amount of delayed sound
 * *forward* is the amount of direct sound
 * *feedback* is the amount of sound to feedback in the delay line (strictly between -1 and 1)
