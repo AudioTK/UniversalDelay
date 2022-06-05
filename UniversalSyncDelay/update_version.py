@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # this script will update the versions in plist and installer files to match that in resource.h
 

@@ -1,6 +1,6 @@
 [Setup]
 AppName=UniversalSyncDelay
-AppVersion=1.3
+AppVersion=1.0
 
 
 DefaultDirName={pf}\UniversalSyncDelay

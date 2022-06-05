@@ -13,7 +13,7 @@
 
 namespace
 {
-constexpr gsl::index FILTERSIZE = 192000;
+constexpr gsl::index FILTERSIZE = 384000+1;
 }
 
 //==============================================================================
@@ -240,7 +240,7 @@ void UniversalSyncDelayAudioProcessor::processBlock(
         auto delay = static_cast<gsl::index>(
             delayFilter.get_input_sampling_rate() * (60 / old_tempo) * 4 *
             old_numerator / old_denominator);
-        delayFilter.set_delay(std::min(delay, FILTERSIZE));
+        delayFilter.set_delay(std::min(delay, FILTERSIZE-1));
     }
     if (*parameters.getRawParameterValue("blend") != old_blend)
     {

@@ -6,8 +6,7 @@
 	<array>
 		<dict>
 			<key>MUST-CLOSE-APPLICATION-ITEMS</key>
-			<array>
-			</array>
+			<array/>
 			<key>MUST-CLOSE-APPLICATIONS</key>
 			<false/>
 			<key>PACKAGE_FILES</key>
@@ -44,8 +43,7 @@
 																<integer>0</integer>
 															</dict>
 															<key>CHILDREN</key>
-															<array>
-															</array>
+															<array/>
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
@@ -155,8 +153,7 @@
 					<integer>0</integer>
 				</dict>
 				<key>RESOURCES</key>
-				<array>
-				</array>
+				<array/>
 			</dict>
 			<key>PACKAGE_SETTINGS</key>
 			<dict>
@@ -183,7 +180,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.3</string>
+				<string>1.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -192,8 +189,7 @@
 		</dict>
 		<dict>
 			<key>MUST-CLOSE-APPLICATION-ITEMS</key>
-			<array>
-			</array>
+			<array/>
 			<key>MUST-CLOSE-APPLICATIONS</key>
 			<false/>
 			<key>PACKAGE_FILES</key>
@@ -218,8 +214,7 @@
 													<array>
 														<dict>
 															<key>CHILDREN</key>
-															<array>
-															</array>
+															<array/>
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
@@ -341,7 +336,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.3</string>
+				<string>1.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -350,8 +345,7 @@
 		</dict>
 		<dict>
 			<key>MUST-CLOSE-APPLICATION-ITEMS</key>
-			<array>
-			</array>
+			<array/>
 			<key>MUST-CLOSE-APPLICATIONS</key>
 			<false/>
 			<key>PACKAGE_FILES</key>
@@ -379,8 +373,7 @@
 										<integer>0</integer>
 									</dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
@@ -413,8 +406,7 @@
 							<array>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
@@ -430,8 +422,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -447,8 +438,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -464,8 +454,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -481,8 +470,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -498,8 +486,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -515,8 +502,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -532,8 +518,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -549,8 +534,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -566,8 +550,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -583,8 +566,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -600,8 +582,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -617,8 +598,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
@@ -634,8 +614,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -651,8 +630,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -668,8 +646,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -685,8 +662,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -702,8 +678,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -719,8 +694,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -736,8 +710,7 @@
 								</dict>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -770,8 +743,7 @@
 							<array>
 								<dict>
 									<key>CHILDREN</key>
-									<array>
-									</array>
+									<array/>
 									<key>GID</key>
 									<integer>0</integer>
 									<key>PATH</key>
@@ -839,8 +811,7 @@
 					<integer>0</integer>
 				</dict>
 				<key>RESOURCES</key>
-				<array>
-				</array>
+				<array/>
 			</dict>
 			<key>PACKAGE_SETTINGS</key>
 			<dict>
@@ -867,7 +838,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.3</string>
+				<string>1.0</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -944,11 +915,9 @@
 						<array>
 							<dict>
 								<key>CHILDREN</key>
-								<array>
-								</array>
+								<array/>
 								<key>DESCRIPTION</key>
-								<array>
-								</array>
+								<array/>
 								<key>OPTIONS</key>
 								<dict>
 									<key>HIDDEN</key>
@@ -959,8 +928,7 @@
 								<key>PACKAGE_UUID</key>
 								<string>3118D663-6535-4604-B292-C0BF7C5193E2</string>
 								<key>TITLE</key>
-								<array>
-								</array>
+								<array/>
 								<key>TYPE</key>
 								<integer>0</integer>
 								<key>UUID</key>
@@ -968,11 +936,9 @@
 							</dict>
 							<dict>
 								<key>CHILDREN</key>
-								<array>
-								</array>
+								<array/>
 								<key>DESCRIPTION</key>
-								<array>
-								</array>
+								<array/>
 								<key>OPTIONS</key>
 								<dict>
 									<key>HIDDEN</key>
@@ -983,8 +949,7 @@
 								<key>PACKAGE_UUID</key>
 								<string>57A50D90-DD8E-43BC-95B0-6E27729656B7</string>
 								<key>TITLE</key>
-								<array>
-								</array>
+								<array/>
 								<key>TYPE</key>
 								<integer>0</integer>
 								<key>UUID</key>
@@ -992,11 +957,9 @@
 							</dict>
 							<dict>
 								<key>CHILDREN</key>
-								<array>
-								</array>
+								<array/>
 								<key>DESCRIPTION</key>
-								<array>
-								</array>
+								<array/>
 								<key>OPTIONS</key>
 								<dict>
 									<key>HIDDEN</key>
@@ -1007,8 +970,7 @@
 								<key>PACKAGE_UUID</key>
 								<string>A3C96C22-40C6-40F8-A8C2-1DF92C8F0DF2</string>
 								<key>TITLE</key>
-								<array>
-								</array>
+								<array/>
 								<key>TYPE</key>
 								<integer>0</integer>
 								<key>UUID</key>
@@ -1016,8 +978,7 @@
 							</dict>
 						</array>
 						<key>REMOVED</key>
-						<dict>
-						</dict>
+						<dict/>
 					</dict>
 				</dict>
 				<key>MODE</key>
@@ -1138,8 +1099,7 @@
 			<key>SUMMARY</key>
 			<dict>
 				<key>LOCALIZATIONS</key>
-				<array>
-				</array>
+				<array/>
 			</dict>
 			<key>TITLE</key>
 			<dict>
@@ -1157,11 +1117,9 @@
 		<key>PROJECT_REQUIREMENTS</key>
 		<dict>
 			<key>LIST</key>
-			<array>
-			</array>
+			<array/>
 			<key>RESOURCES</key>
-			<array>
-			</array>
+			<array/>
 			<key>ROOT_VOLUME_ONLY</key>
 			<true/>
 		</dict>
