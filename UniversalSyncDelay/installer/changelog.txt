@@ -1,5 +1,5 @@
 ATKUniversalSyncDelay changelog
 http://www.audio-tk.com
 
-13/03/22 - 1.0
+19/06/22 - 1.0
  - Initial release
